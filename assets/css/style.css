@@ -135,53 +135,34 @@ button {
 }
 
 
-/* for Trivia page ____________________ */
+/* for GifTastic page ____________________ */
 @font-face {
     font-family: textile;
     src: url("../fonts/Textile.ttf");
 }
 
-h4:hover {
-    cursor: pointer;
+#app_add_topic>form {
+    display: inline;
 }
 
-#g_timer {
-    /* display: inline-block; */
-    text-align: center;
+.control_buttons {
+    padding: 3px;
 
-    color: white;
-    background-color: darkred;
+    font-size: 10pt;
 }
 
-#g_question {
-    text-align: center;
+#button_selected {
+    background-color: #3a8895;
+    outline: none;
 }
 
-#g_answers {
+#app_gifs {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-#g_answers>h4{
-    padding: 10px;
-}
-
-#g_reset {
-    display: flex;
-    justify-content: center;
-}
-
-#g_reset>input{
-    padding: 15px;
-
-    font-size: 14pt;
-    color: white;
-    background-color: darkred;
-    border: none;
-}
-
-.selected {
-    border: 1px dashed darkred;
+.topic_gif {
+    width: 75%;
 }
 
 

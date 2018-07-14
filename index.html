@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Geography Trivia</title>
+    <title>GifTastic</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css">
@@ -29,8 +29,17 @@
                 <h1>GifTastic</h1>
                 <hr>
             <div class="app">
-                <div id="app_buttons"></div>
-                <div id="app_add_button"></div>
+                <div id="app_add_topic">
+                    <form>
+                        <input type="text" name="add_topic" id="add_topic_text">
+                        <button type="submcontrolit" class="control_buttons" id="add_topic_button">Add Topic</button>
+                    </form>
+                    <button class="control_buttons" id="save_topics">Save</button>
+                    <button class="control_buttons" id="reset_topics">Reset</button>
+                </div>
+                <br>
+                <div id="app_buttons"></div> 
+                <br>
                 <div id="app_gifs"></div>
             </div>
         </div>
