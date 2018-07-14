@@ -28,7 +28,9 @@ a:visited {
 }
 
 hr {
+    margin-bottom: 13px;
     height: 3px;
+
     border: none;
     background-color: #dddddd;
 }
@@ -97,7 +99,7 @@ button {
 
 .content>h1 {
     font-family: 'Georgia', Times, Times New Roman, serif;
-    color: darkred;
+    color: #4aaaa5;
 }
 
 .content>img {
@@ -143,6 +145,19 @@ button {
 
 #app_add_topic>form {
     display: inline;
+}
+
+/* #add_topic_text {
+    outline: 1px solid darkred; 
+} */
+
+#add_topic_button {
+    background-color: #3a8895;
+}
+
+#save_topics,
+#reset_topics {
+    background-color: #3a8895;
 }
 
 .control_buttons {

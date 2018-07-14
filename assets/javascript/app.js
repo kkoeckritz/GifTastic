@@ -48,6 +48,7 @@ var gifs = {
 		$("#reset_topics").on("click", function() {
 			topics = ["Jack Nicholson"];
 			gifs.displayButtons();
+			$("#app_gifs").empty();
 			console.log("cleared.")
 		});
 	},
@@ -76,7 +77,7 @@ var gifs = {
 		}
 
 		// set click listener on buttons
-		$(".topic_button").on("click.get_gifs", function() {
+		$(".topic_button").on("click", function() {
 			// change clicked button color
 			$(".topic_button").removeAttr("id");
 			$(this).attr("id", "button_selected");
