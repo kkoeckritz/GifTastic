@@ -34,8 +34,14 @@
                         <input type="text" name="add_topic" id="add_topic_text">
                         <button type="submit" class="control_buttons" id="add_topic_button">Add Topic</button>
                     </form>
-                    <button class="control_buttons" id="save_topics">Save</button>
-                    <button class="control_buttons" id="reset_topics">Reset</button>
+                    <div class="tooltip">
+                        <span class="tooltiptext">load current topics on next visit</span>
+                        <button class="control_buttons" id="save_topics">Save</button>
+                    </div>
+                    <div class="tooltip">
+                        <span class="tooltiptext">reset topics and clear gifs</span>                    
+                        <button class="control_buttons" id="reset_topics">Clear</button>
+                    </div>
                 </div>
                 <br>
                 <div id="app_buttons"></div> 

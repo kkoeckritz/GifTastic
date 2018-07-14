@@ -143,13 +143,44 @@ button {
     src: url("../fonts/Textile.ttf");
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    padding: 5px 5px;
+    text-align: center;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%; 
+    margin-left: -60px;
+    border-radius: 15px;    
+
+    color: #fff;
+    background-color: #4aaaa5;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 #app_add_topic>form {
     display: inline;
 }
 
-/* #add_topic_text {
-    outline: 1px solid darkred; 
-} */
+#add_topic_text {
+    outline-color: #3a8895; 
+}
+
+#add_topic_text:focus {
+    outline-color: #3a8895;
+    box-shadow: none;
+}
 
 #add_topic_button {
     background-color: #3a8895;

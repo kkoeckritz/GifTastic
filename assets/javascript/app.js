@@ -46,7 +46,7 @@ var gifs = {
 
 	allowReset: function() {
 		$("#reset_topics").on("click", function() {
-			topics = ["Jack Nicholson"];
+			topics = [];
 			gifs.displayButtons();
 			$("#app_gifs").empty();
 			console.log("cleared.")
