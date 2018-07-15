@@ -26,13 +26,16 @@
     <br>
     <div class="main">
         <div class="content">
-                <h1>GifTastic</h1>
-                <hr>
+            <h1>GifTastic</h1>
+            <hr>
             <div class="app">
                 <div id="app_add_topic">
                     <form>
                         <input type="text" name="add_topic" id="add_topic_text">
-                        <button type="submit" class="control_buttons" id="add_topic_button">Add Topic</button>
+                        <div class="tooltip">
+                            <span class="tooltiptext">HOVER over gifs to animate</span>
+                            <button type="submit" class="control_buttons" id="add_topic_button">Add Topic</button>
+                        </div>
                     </form>
                     <div class="tooltip">
                         <span class="tooltiptext">load current topics on next visit</span>
@@ -45,7 +48,13 @@
                 </div>
                 <br>
                 <div id="app_buttons"></div> 
-                <br>
+                
+                <div id="app_wiki">
+                    <!-- <div id="wiki_logo"></div> -->
+                    <div id="wiki_text"></div>
+                    <p id="wiki_more">view more</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" id="wiki_logo">
+                </div>
                 <div id="app_gifs"></div>
             </div>
         </div>

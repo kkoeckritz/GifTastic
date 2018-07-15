@@ -7,13 +7,14 @@ var topics = [
 var topic_data = {};
 
 // store gif logic
+
 var gifs = {
 
 	// load any topics from localStorage
 	loadTopics: function() {
 		for (var i = 0; i < localStorage.length; i++) {
 			var new_topic = localStorage.getItem(`stored_${i}`);
-			if (topics.indexOf(new_topic) == -1) {
+			if (topics.indexOf(new_topic) == -1 && new_topic != "") {
 				topics.push(new_topic);
 				console.log(`loaded: ${new_topic}`);
 			}
@@ -48,6 +49,7 @@ var gifs = {
 		$("#reset_topics").on("click", function() {
 			topics = [];
 			gifs.displayButtons();
+			$("#app_wiki").hide();
 			$("#app_gifs").empty();
 			console.log("cleared.")
 		});
@@ -62,28 +64,6 @@ var gifs = {
 			var topic = $(this).data("topic");
 			var num = $(this).data("num");
 			$(this).attr("src", topic_data[topic][num].gif_still);
-		});
-	},
-
-	// add button to app_buttons for each name in topics[]
-	displayButtons: function() {
-		$("#app_buttons").empty();
-		for (a in topics) {
-			$("<button>", {
-				class: "topic_button",
-				"data-topic": topics[a],
-				text: topics[a]
-			}).appendTo("#app_buttons");
-		}
-
-		// set click listener on buttons
-		$(".topic_button").on("click", function() {
-			// change clicked button color
-			$(".topic_button").removeAttr("id");
-			$(this).attr("id", "button_selected");
-
-			var topic = $(this).data("topic");
-			gifs.getGifs(topic); // calls displayGifs()
 		});
 	},
 
@@ -143,6 +123,50 @@ var gifs = {
 
 			// display retrieved gifs
 			gifs.displayGifs(topic);
+		});
+	},
+
+	// grab topic info from wikipedia(EN); display it with link for more
+	getWiki: function(topic) {
+		var query_url = `https://en.wikipedia.org/api/rest_v1/page/summary/${topic}`;
+
+		$.ajax({
+			url: query_url,
+			method: "GET"
+		}).then(function(response) {
+			$("#wiki_text").empty();
+			$("#wiki_text").html(`<p>${response.extract}</p>`)
+			$("#app_wiki").show();
+
+			$("#wiki_more").wrap($('<a>',{
+				href: `https://en.wikipedia.org/wiki/${topic}`
+			 }));
+			 $("#wiki_logo").wrap($('<a>',{
+				href: `https://en.wikipedia.org/wiki/${topic}`
+			 }));
+		});
+	},
+
+	// add button to app_buttons for each name in topics[]
+	displayButtons: function() {
+		$("#app_buttons").empty();
+		for (a in topics) {
+			$("<button>", {
+				class: "topic_button",
+				"data-topic": topics[a],
+				text: topics[a]
+			}).appendTo("#app_buttons");
+		}
+
+		// set click listener on buttons
+		$(".topic_button").on("click", function() {
+			// change clicked button color
+			$(".topic_button").removeAttr("id");
+			$(this).attr("id", "button_selected");
+
+			var topic = $(this).data("topic");
+			gifs.getGifs(topic); // calls displayGifs()
+			gifs.getWiki(topic);
 		});
 	}
 };
