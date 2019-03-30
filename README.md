@@ -11,7 +11,11 @@ Save your go-to topics for later, or try something completely new. GifTastic tak
 </80s-900-number-commercial-voice>
 
   
-## To run
+## Want to see it in action?
+[Check it out here](http://koec.io/GifTastic/ "Hosted by GitHub")
+
+
+## Want to build it yourself?
 Link to ./assets/javascript/app.js in a page of your choice, then make sure these elements
 
 ```html
