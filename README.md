@@ -12,7 +12,7 @@ Save your go-to topics for later, or try something completely new. GifTastic tak
 
   
 ## Want to see it in action?
-[Check it out here](http://koec.io/GifTastic/ "Hosted by GitHub")
+[Check it out!](http://koec.io/GifTastic/ "Hosted by GitHub")
 
 
 ## Want to build it yourself?
